@@ -6,6 +6,7 @@ import { DataSourceOptions } from 'typeorm';
 @Injectable()
 export class DbOptions implements TypeOrmOptionsFactory {
   constructor(private readonly configService: ConfigService) {}
+  //check environment
   getEnvironment(): string {
     const env = this.configService.get<string>('STAGE');
     return env;
